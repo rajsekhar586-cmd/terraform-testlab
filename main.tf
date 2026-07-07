@@ -10,7 +10,10 @@ terraform {
 provider "azurerm" {
   features {}
 
-  subscription_id = "db308e17-90c5-4613-b247-de8a1c9a2ce6"
+ subscription_id = var.subscription_id
+  tenant_id       = var.tenant_id
+  client_id       = var.client_id
+  client_secret   = var.client_secret
 }
 resource "azurerm_resource_group" "rg" {
   name     = "terraform-rep-rg"
